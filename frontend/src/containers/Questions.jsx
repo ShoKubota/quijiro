@@ -4,6 +4,9 @@ import styled from 'styled-components';
 //apis
 import { fetchQuestions } from '../apis/questions';
 
+// constants
+import { REQUEST_STATE } from '../constants';
+
 // components
 import Skeleton from '@material-ui/lab/Skeleton'; 
 import Button from '@material-ui/core/Button';
@@ -107,11 +110,9 @@ export const Questions = () => {
         <QuestionsList>
           <QuestionsContentWrapper>
             <QuestionsTitle>
-              {
                 <div>
                   { state.question1.title }
                 </div>
-              }
             </QuestionsTitle>
             <QuestionImage />
               {
@@ -124,11 +125,9 @@ export const Questions = () => {
           </QuestionsContentWrapper>
           <QuestionsContentWrapper>
             <QuestionsTitle>
-              {
                 <div>
                   { state.question2.title }
                 </div>
-              }
             </QuestionsTitle>
             <QuestionImage />
             {
@@ -141,11 +140,9 @@ export const Questions = () => {
           </QuestionsContentWrapper>
           <QuestionsContentWrapper>
             <QuestionsTitle>
-              {
                 <div>
                   { state.question3.title }
                 </div>
-              }
             </QuestionsTitle>
             <QuestionImage />
             {
