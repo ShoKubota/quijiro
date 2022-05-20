@@ -5,6 +5,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom'
+import { StylesProvider } from '@material-ui/styles';
 
 //compoents
 import { Questions } from './containers/Questions.jsx'
@@ -16,7 +17,9 @@ function App() {
         <Route
           exact
           path='/questions'>
-            <Questions />
+            <StylesProvider injectFirst>
+              <Questions />
+            </StylesProvider>
           </Route>
       </Switch>
     </Router>
