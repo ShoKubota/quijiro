@@ -1,11 +1,8 @@
-import React, { Fragment, useEffect, useReducer } from 'react';
+import React, { Fragment, useEffect, useReducer, useState } from 'react';
 import styled from 'styled-components';
 
 //apis
 import { fetchQuestions } from '../apis/questions';
-
-// constants
-import { REQUEST_STATE } from '../constants';
 
 // components
 import Skeleton from '@material-ui/lab/Skeleton'; 
@@ -20,6 +17,9 @@ import {
 
 //images
 import MainLogo from '../images/logo.png';
+import Akahige from '../images/akahige.jpg'
+import ButayamaNakano from '../images/butayama_nakano.jpg'
+import Hibarigaoka from '../images/hibarigaoka.jpg'
 
 const Wrapper = styled.div`
   padding-bottom: 30px;
@@ -59,14 +59,14 @@ const QuestionsTitle = styled.div`
   padding: 10px 0px;
 `;
 
-const QuestionImage = styled.div`
-  width: 100%;
-  height: 250px;
-  margin-bottom: 30px;
-  background-color: gray;
+const Questionsbody = styled.div`
+  text-align: left;
 `;
 
-// 謎にMUIのカスタマイズが効かない
+const QuestionImage = styled.img`
+  width: 100%;
+  margin-bottom: 30px;
+`;
 
 const AnswerButton = styled(Button)`
   display: block;
@@ -78,6 +78,10 @@ const AnswerButton = styled(Button)`
   margin-bottom: 15px;
   box-shadow: 0px 2px 2px #C9CACA;
 `;
+
+const buttonAlert = (answer) => {
+  {answer.correction ? alert('正解！') : alert('不正解！')}
+}
 
 export const Questions = () => {
 
@@ -114,14 +118,17 @@ export const Questions = () => {
                   { state.question1.title }
                 </div>
             </QuestionsTitle>
-            <QuestionImage />
+            <QuestionImage src={Akahige} alt="akahige" />
               {
                 state.question1Answers.map(question1Answer => 
-                  <AnswerButton variant="contained" >
+                  <AnswerButton variant="contained" onClick={() => buttonAlert(question1Answer)}>
+                    {/* 正解or不正解の条件分岐を作る */}
                     { question1Answer.title }
                   </AnswerButton>
                 )
               }
+              <Questionsbody>
+              </Questionsbody>
           </QuestionsContentWrapper>
           <QuestionsContentWrapper>
             <QuestionsTitle>
@@ -129,10 +136,10 @@ export const Questions = () => {
                   { state.question2.title }
                 </div>
             </QuestionsTitle>
-            <QuestionImage />
+            <QuestionImage src={ButayamaNakano} alt="butayama_nakano" />
             {
               state.question2Answers.map(question2Answer => 
-                <AnswerButton variant="contained">
+                <AnswerButton variant="contained" onClick={() => buttonAlert(question2Answer)}>
                   { question2Answer.title }
                 </AnswerButton>
               )
@@ -144,10 +151,10 @@ export const Questions = () => {
                   { state.question3.title }
                 </div>
             </QuestionsTitle>
-            <QuestionImage />
+            <QuestionImage src={Hibarigaoka} alt="hibarigaoka" />
             {
               state.question3Answers.map(question3Answer => 
-                <AnswerButton variant="contained">
+                <AnswerButton variant="contained" onClick={() => buttonAlert(question3Answer)}>
                   { question3Answer.title }
                 </AnswerButton>
               )
