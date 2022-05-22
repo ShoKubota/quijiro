@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { fetchQuestions } from '../apis/questions';
 
 // components
-import Skeleton from '@material-ui/lab/Skeleton'; 
 import Button from '@material-ui/core/Button';
 
 //reducers
@@ -112,6 +111,7 @@ export const Questions = () => {
           <MainLogoImage src={MainLogo} alt="main logo" />
         </HeaderWrapper>
         <QuestionsList>
+          {/* コンポーネントに切り出せるようにする */}
           <QuestionsContentWrapper>
             <QuestionsTitle>
                 <div>
