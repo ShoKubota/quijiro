@@ -1,24 +1,19 @@
-# README
+# Quijiro
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## どんなサービス？
+二郎のクイズを楽しめるサービスです
 
-Things you may want to cover:
+## このサービスを作る目的
+1. Rails APIとReactを学習したい
+2. みんなで二郎クイズを作りたい
+3. SPA開発をしてみたい
 
-* Ruby version
+## 使用技術
+Ruby 3.0.3
+Rails 6.1.4
 
-* System dependencies
+React 18.1.0
 
-* Configuration
+## デザインカンプ
+![スクリーンショット 2022-05-23 13 44 24](https://user-images.githubusercontent.com/63547176/169745076-8794588c-8a97-4343-b9b2-f7148a82d022.png)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
